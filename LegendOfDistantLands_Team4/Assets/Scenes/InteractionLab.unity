@@ -604,6 +604,7 @@ GameObject:
   - component: {fileID: 387484584}
   - component: {fileID: 387484583}
   - component: {fileID: 387484582}
+  - component: {fileID: 387484586}
   m_Layer: 5
   m_Name: SubtitleCanvas
   m_TagString: MainCamera
@@ -702,6 +703,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &387484586
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387484580}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &512241053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,6 +1667,7 @@ GameObject:
   - component: {fileID: 1473845420}
   - component: {fileID: 1473845419}
   - component: {fileID: 1473845418}
+  - component: {fileID: 1473845421}
   m_Layer: 5
   m_Name: WorldDialogueCanvas
   m_TagString: Untagged
@@ -1744,6 +1758,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1473845421
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473845416}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1639151116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,13 +1957,18 @@ MonoBehaviour:
   worldText: {fileID: 1068469058}
   worldSpeakerText: {fileID: 333598254}
   currentAnchor: {fileID: 0}
+  alwaysOpenWorldDialog: 0
   subtitleRoot: {fileID: 387484580}
   subtitleText: {fileID: 95123145}
   subtitleSpeakerText: {fileID: 1897982202}
+  visibilityResolver: {fileID: 1639151121}
   hasActiveDialogue: 0
   cameraTransform: {fileID: 1308773926}
   lockVertical: 0
-  visibilityResolver: {fileID: 1639151121}
+  worldGroup: {fileID: 1473845421}
+  subtitleGroup: {fileID: 387484586}
+  useFade: 1
+  fadeDuration: 0.15
 --- !u!114 &1754015198
 MonoBehaviour:
   m_ObjectHideFlags: 0

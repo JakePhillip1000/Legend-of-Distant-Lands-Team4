@@ -153,4 +153,12 @@ public class DialogueVisibilityResolver : MonoBehaviour
 
         return dot >= threshold;
     }
+
+    public void ClearTarget()
+    {
+        targetAnchor = null;
+        transitionTimer = 0;
+        rawVisible = false;
+        isVisible = false;
+    }
 }
