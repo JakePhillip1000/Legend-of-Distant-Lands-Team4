@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 333598255}
   - component: {fileID: 333598254}
   m_Layer: 5
-  m_Name: WorldDialogSpeaker
+  m_Name: WorldDialogText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 1068469059}
   - component: {fileID: 1068469058}
   m_Layer: 5
-  m_Name: WorldDialogText
+  m_Name: WorldDialogSpeaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -32,7 +32,7 @@ public class DialoguePresenter : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (currentAnchor == null) return;
+        if (currentAnchor == null || worldRoot == null) return;
 
         worldRoot.transform.position = currentAnchor.position;
         UpdateBillboard();
@@ -103,11 +103,7 @@ public class DialoguePresenter : MonoBehaviour
     }
     public void SetAnchor(Transform anchor)
     {
-        currentAnchor = anchor;
-
-        if (anchor == null && worldRoot == null) return;
-
-        worldRoot.transform.position = anchor.position;
+        currentAnchor.position = anchor.position;
     }
 
     [Header("Billboard Setting")]
