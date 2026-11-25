@@ -37,6 +37,11 @@ public class DialoguePresenter : MonoBehaviour
         worldRoot.transform.position = currentAnchor.position;
         UpdateBillboard();
     }
+    private void Awake()
+    {
+        hasActiveDialogue = false;
+        SetModeImmediate(PresentationMode.Hidden);
+    }
     private void OnEnable()
     {
         if (visibilityResolver == null) return;
@@ -45,6 +50,8 @@ public class DialoguePresenter : MonoBehaviour
     }
     private void OnDisable()
     {
+        CancelFade();
+
         if (visibilityResolver == null) return;
 
         visibilityResolver.OnVisibilityChanged -= HandleVisibilityChanged;
@@ -64,6 +71,15 @@ public class DialoguePresenter : MonoBehaviour
         string speaker,
         Transform anchor)
     {
+        if (anchor == null)
+        {
+            Debug.LogWarning($"Missing dialogue anchor: {speaker}");
+            EndDialogue();
+            return;
+        }
+
+        CancelFade();
+
         SetContent(message, speaker);
         SetAnchor(anchor);
 
@@ -103,7 +119,7 @@ public class DialoguePresenter : MonoBehaviour
     }
     public void SetAnchor(Transform anchor)
     {
-        currentAnchor.position = anchor.position;
+        currentAnchor = anchor;
     }
 
     [Header("Billboard Setting")]
