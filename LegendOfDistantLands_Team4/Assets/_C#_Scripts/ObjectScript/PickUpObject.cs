@@ -44,7 +44,6 @@ public class PickUpObject : MonoBehaviour
         if (player == null || playercam == null || rightHand == null ||
             pickupObject == null || itemInHand == null || pickupText == null ||
             pickupObject == gameObject || pickupObject == itemInHand) {
-            Debug.LogError("Assign all pickup references to separate world and hand objects.", this);
             enabled = false;
             return;
         }
